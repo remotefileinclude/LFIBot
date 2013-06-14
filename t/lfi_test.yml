@@ -1,0 +1,29 @@
+---
+servers:
+  'pocotest':
+    host: '127.0.0.1'
+    port: 56667
+    admins: [ rfi ]
+    blacklist: [ lt ]
+    channels: [ '#test' ]
+    do_auth: 1
+    throttle: 0
+    cmd_prefix: '.lfi' 
+    auth_handlers:
+      auth_service: 'auth_bot'
+      auth_string_t: 'auth string'
+      auth_success: 'auth successful'
+      auth_failure: 'bad password'
+      throttle: 0
+      ask_if_authed: 'is authed ##user_authed##'
+      user_authed: '([^\s]+) is authenticated to ([^\s]+)'
+      user_not_authed: 'no user named ([^\s]+)'
+    nick: 'lfi'
+    ircname: 'lfi-bot'
+    user: 'test'
+    password: 'testpass'
+    data_file: '/tmp/test_lfibot.db'
+    quit_message: "I'm about to break"
+    modules: 
+      - 'LinkHistory'
+      - 'UrbanDictionary' 
